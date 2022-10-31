@@ -1,6 +1,5 @@
 <?
 require 'vendor/autoload.php';
-
 define('PROFILE_STORAGE_PATH','/var/www/html/profile_images/');
 define('BANNER_STORAGE_PATH','/var/www/html/banner_images/');
 define('CUSTOM_STORAGE_PATH','/var/www/html/custom_images/');
