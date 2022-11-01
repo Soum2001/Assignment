@@ -8,19 +8,26 @@ $user_role=$_SESSION['role'];
 error_log($select_user);
 error_log('select_user'.$user_role);
 
+
+
+
 //tabels
 $user_detailstbl = $query_builder->table('user_details');
 $img_upload = $query_builder->table('img_upload');
 $gallery_tbl = $query_builder->table('galleries');
 $gallery_type_tbl = $query_builder->table('gallery_type');
+
+
+
 //check user is there or not
-// $check= $user_detailstbl->select()
-// ->where('id',$_SESSION['login_id'])
-// ->get();
-// if($check)
-// {
-//   header('Location:index.php');
-// }
+$check= $user_detailstbl->select()
+->where('id',$_SESSION['login_id'])
+->get();
+if(!$check)
+{
+  error_log("passedddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+  header('Location:index.php?err_response=0');
+}
 
 
 if(isset($select_user) && $select_user){
@@ -115,18 +122,31 @@ $select_gallery_bannerid= $gallery_tbl->select()
   <link rel="stylesheet" href="assest/css/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="assest/dist/css/adminlte.min.css">
-  <link  href="assest/css/cropper.min.css" rel="stylesheet">
+  <link  href="assest/cropper/cropper.css" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
+    
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li> 
+      <form method="POST" action="logout.php">
+        <div class="row">
+          <div class="col-md-6">
+            <li class="nav-item">
+              <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li> 
+          </div>
+          <div class="col-md-6">
+            <li class="nav-item">
+              <input type="submit" class="btn btn-primary" onclick="logout_btn()" id="logout_btn" name="logout_btn" value="Log out">
+            </li> 
+          </div>
+      </div>
     </ul> 
+  </form>
+
   </nav>
   <!-- /.navbar -->
 
@@ -185,7 +205,7 @@ $select_gallery_bannerid= $gallery_tbl->select()
               </li>
               <?}?>
               <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
+                <a href="user_profile.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Profile</p>
                 </a>
@@ -215,13 +235,14 @@ $select_gallery_bannerid= $gallery_tbl->select()
                   <form  action="user_profile_upload.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" id="user_id" value=<?=$id?>>
                     <img class="profile-user-img img-fluid img-circle" src="<?= $src;?>"  id="profile_image">
-                    <input type="file" id="profile_imgupload" name="profile_imgupload" onchange="loadprofile_img(this)" style="display:none"/> 
+                    <input type="file" id="profile_imgupload" name="profile_imgupload" onchange="crop_class.loadprofile_img(this,1)" style="display:none"/> 
                     <i class="fas fa-camera upload-profile" id="profileupload" ></i>
                   </form>
                 </div>
                 <h3 class="profile-username text-center"><b><span id="head_username" name="head_username"></span> </b></h3>
                 <p class="text-muted text-center">student</p>
-
+                <input type="file" id="banner_imgupload" name="banner_imgupload" onchange="crop_class.loadbanner_img(this,2)" style="display:none"/> 
+                <button class="btn btn-primary" id="banner_btn">banner upload</button>
             <!--banner upload-->
 
               
@@ -331,7 +352,8 @@ $select_gallery_bannerid= $gallery_tbl->select()
 
 <!-- jQuery -->
 <script src="assest/jquery/jquery.min.js"></script>
-<script src="assest/js/cropper.min.js"></script>
+<script src="assest/cropper/cropper.js"></script>
+
 <!-- Bootstrap 4 -->
 <script src="assest/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
@@ -342,5 +364,6 @@ $select_gallery_bannerid= $gallery_tbl->select()
 <script src="assest/js/image_access.js"></script>    
 <script src="assest/js/register.js"></script> 
 <script src="assest/js/setimage.js"></script>
+<script src="assest/js/datatable.js"></script> 
 </body>
 </html>

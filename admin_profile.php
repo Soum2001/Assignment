@@ -115,7 +115,7 @@ $img_upload = $query_builder->table('img_upload');
                                         <div class="card-body box-profile">
                                             <div class="text-center" >
                                                 <img class="profile-user-img img-fluid img-circle" src="<?= $src;?>"  id="profile_image">
-                                                <input type="file" id="profile_imgupload" name="profile_imgupload" onchange="loadprofile_img(this)" style="display:none"/> 
+                                                <input type="file" id="profile_imgupload" name="profile_imgupload" onchange="crop_class.loadprofile_img(this)" style="display:none"/> 
                                                 <i class="fas fa-camera upload-profile" id="profileupload" ></i>
                                             </div> 
                                             <h3 class="profile-username text-center"><b><span id="head_username" name="head_username"></span> </b></h3>

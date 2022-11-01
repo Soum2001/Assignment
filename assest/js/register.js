@@ -281,52 +281,11 @@ $(document).ready(function(){
             
         }
         });
-        $('#userdtable').DataTable();
+        $('#userdtable').dataTable();
 
    
    
-//   //Check active and inactive state
-//   if($("#active").is(":checked"))
-//   {
-//     var id=$("#inactive").val();
-//     alert(id);
-//     $.ajax({
-//         url: "update_state.php",
-//         type:'POST', 
-//         data:{'active_con':0,'id':id}, 
-//         success:function(response){
-//             console.log(response);
-//             var jsonData = JSON.parse(response);
 
-//             if(jsonData.success){
-//                 alert(jsonData.msg);
-//             }else{
-//                 alert(jsonData.msg);
-//             }
-            
-//         }
-//         });
-//   } 
-//   else{
-//     var id=$("#active").val();
-//     alert(id);
-//     $.ajax({
-//         url: "update_state.php",
-//         type:'POST', 
-//         data:{'active_con':1,'id':id}, 
-//         success:function(response){
-//             console.log(response);
-//             var jsonData = JSON.parse(response);
-
-//             if(jsonData.success){
-//                 alert(jsonData.msg);
-//             }else{
-//                 alert(jsonData.msg);
-//             }
-            
-//         }
-//         });
-//   }
 
 });
 

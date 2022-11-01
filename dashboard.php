@@ -1,17 +1,23 @@
 <?
 session_start();
 if($_SESSION['login_id']=="")
-{
-    $Msg="Input valid credential to login";
-    header("location:index.php?err_response=".$Msg);
-    exit();
-}
+
 include 'connection.php';
 include 'modal.php';
 $table = $query_builder->table('user_details');
 $img_upload = $query_builder->table('img_upload');
 
 $user_details=$table->select()->where('role','user')->get();
+
+$check= $user_detailstbl->select()
+->where('id',$_SESSION['login_id'])
+->get();
+
+if(!$check)
+{
+  header('Location:index.php?err_response=0');
+  exit();
+}
 
 $image = $img_upload->select()
    ->where('gallery_id',$select_gallery_id[0]['id'])

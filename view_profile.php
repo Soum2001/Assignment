@@ -33,7 +33,8 @@
     $gallery_id=$_POST['gallery_id'];
 
     $select_gallery_type = $gallery_tbl->select()->where('id',$gallery_id)->get();
- 
+    
+    error_log("hlo jiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii".$select_gallery_type[0]['gallery_type']);
    
     if($select_gallery_type[0]['gallery_type']==1)
     {
