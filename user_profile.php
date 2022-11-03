@@ -112,17 +112,7 @@ $select_gallery_bannerid= $gallery_tbl->select()
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | User Profile</title>
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="assest/css/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="assest/dist/css/adminlte.min.css">
-  <link  href="assest/cropper/cropper.css" rel="stylesheet">
+ <?include 'header.php'?>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -302,7 +292,7 @@ $select_gallery_bannerid= $gallery_tbl->select()
                     <?}?>
                     
                     <li class="nav-item">
-                        <a class="nav-link add_gallery" onclick="add_gallery(<?=$_SESSION['login_id']?>)">Add Gallery</a>
+                        <a class="nav-link add_gallery" onclick="add_gallery(<?=$id?>)">Add Gallery</a>
                     </li> 
                     <?if($user_role=='admin')
                     {
@@ -351,19 +341,7 @@ $select_gallery_bannerid= $gallery_tbl->select()
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="assest/jquery/jquery.min.js"></script>
-<script src="assest/cropper/cropper.js"></script>
+<?include 'footer.php'?>
 
-<!-- Bootstrap 4 -->
-<script src="assest/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="assest/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="assest/dist/js/demo.js"></script>
-<script src="assest/js/openfile.js"></script> 
-<script src="assest/js/image_access.js"></script>    
-<script src="assest/js/register.js"></script> 
-<script src="assest/js/setimage.js"></script>
-<script src="assest/js/datatable.js"></script> 
 </body>
 </html>

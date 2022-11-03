@@ -1,9 +1,16 @@
+<?
+// if( $_SERVER['HTTP_REFERER']==index.php)
+// {
+//   header('loaction:forget_password.php');
+// }
+// else{
+//   header('loaction:index.php');
+// }
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="assest/css/additional.css">
+<?include 'header.php'?>
 <style>
   .form-gap {
     padding-top: 70px;
@@ -59,7 +66,6 @@
 	</div>
 </div>
 <!-- JavaScript Bundle with Popper -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<?include 'footer.php'?>
 </body>
 </html>

@@ -2,11 +2,7 @@
 <html>
     <head>
         <!-- CSS only-->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-        <link rel="stylesheet" href="assest/css/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="assest/css/adminlte.min.css">
-        <link rel="stylesheet" href="assest/css/icheck-bootstrap.min.css">
-        <link rel="stylesheet" href="assest/css/additional.css">
+    <?include 'header.php'?>
     </head>
     <body class="register-page">
       <?
@@ -81,13 +77,7 @@
         </div>
         </div>
         </div>
-        <!-- jQuery -->
-        <script src="assest/jquery/jquery.min.js"></script>
-        <!-- Bootstrap 4 -->
-        <script src="assest/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="assest/dist/js/adminlte.min.js"></script>
-        <script src="assest/js/login_validation.js"></script>
+       <?include 'footer.php'?>
             
     </body>
 </html> 

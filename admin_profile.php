@@ -29,7 +29,7 @@ $img_upload = $query_builder->table('img_upload');
        
     }
     else{
-        $src="./assest/image/default-avatar.png";  
+        $src="./assets/image/default-avatar.png";  
     } 
 ?>
 <!DOCTYPE html>
@@ -37,11 +37,11 @@ $img_upload = $query_builder->table('img_upload');
     <head>
          <!-- CSS only -->
          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-        <link rel="stylesheet" href="assest/css/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="assest/css/adminlte.min.css">
-        <link rel="stylesheet" href="assest/css/icheck-bootstrap.min.css">
-        <link rel="stylesheet" href="assest/css/additional.css">
-        <link  href="assest/css/cropper.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/adminlte.min.css">
+        <link rel="stylesheet" href="assets/css/icheck-bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/additional.css">
+        <link  href="assets/css/cropper.min.css" rel="stylesheet">
     </head>
     <style>
         
@@ -187,15 +187,15 @@ $img_upload = $query_builder->table('img_upload');
         include 'modal.php';
         ?>
         <!-- jQuery -->
-        <script src="assest/jquery/jquery.min.js"></script>
-        <script src="assest/js/cropper.min.js"></script>
+        <script src="assets/jquery/jquery.min.js"></script>
+        <script src="assets/js/cropper.min.js"></script>
 
         <!-- Bootstrap 4 -->
-        <script src="assest/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- AdminLTE App -->
-        <script src="assest/dist/js/adminlte.min.js"></script>
-        <script src="assest/js/login_validation.js"></script>
-        <script src="assest/dist/js/demo.js"></script>
+        <script src="assets/dist/js/adminlte.min.js"></script>
+        <script src="assets/js/login_validation.js"></script>
+        <script src="assets/dist/js/demo.js"></script>
         <script src="openfile.js"></script> 
         <script src="image_access.js"></script>    
         <script src="register.js"></script> 

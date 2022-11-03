@@ -143,18 +143,18 @@ function row_select(id){
   
                 var userDetails = jsonData.data;
 
-                console.log(userDetails);
-                document.getElementById('name').innerText = userDetails.user_name;
-                 document.getElementById('email_id').innerText = userDetails.email;
-                 document.getElementById('addres').innerText = userDetails.address;
-                 document.getElementById('phn').innerText = userDetails.phone_no;
-            //    $("#name").val(userDetails.user_name); 
-            //     $("#email_id").val(userDetails.email);
-            //    // alert($("#email").val());
-            //     $("#addres").val(userDetails.address);
-            //     $("#phn").val(userDetails.phone_no);
+                console.log(userDetails.phone_no);
+                // document.getElementById('user_name').innerText = userDetails.user_name;
+                // document.getElementById('mail_id').innerText = userDetails.email;
+                // document.getElementById('addres').innerText = userDetails.address;
+                // document.getElementById('mob').innerText = userDetails.phone_no;
+               $("#user_name").val(userDetails.user_name); 
+                $("#mail_id").val(userDetails.email);
+               // alert($("#email").val());
+                $("#addres").val(userDetails.address);
+                $("#mob").val(userDetails.phone_no);
                 $("#register").html('edit');
-                $("#details_modal").modal("show");
+                $("#exampleModalCenter").modal("show");
             }else{
               
             }

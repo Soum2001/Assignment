@@ -5,14 +5,7 @@
 <html lang="en">
 <head>
    <!-- CSS only -->
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-        <link rel="stylesheet" href="assest/css/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="assest/css/adminlte.min.css">
-        <link rel="stylesheet" href="assest/css/icheck-bootstrap.min.css">
-        <link rel="stylesheet" href="assest/css/additional.css">
-       <style>
-       
-        </style>
+  <?include 'header.php'?>
 </head>
 <body>
     <?php
@@ -33,22 +26,9 @@
     $gallery_id=$_POST['gallery_id'];
 
     $select_gallery_type = $gallery_tbl->select()->where('id',$gallery_id)->get();
-    
-    error_log("hlo jiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii".$select_gallery_type[0]['gallery_type']);
    
-    if($select_gallery_type[0]['gallery_type']==1)
-    {
-        $path=PROFILE_STORAGE_PATH;
-    }
-   else if($select_gallery_type[0]['gallery_type']==2)
-   {
-        $path=BANNER_STORAGE_PATH;
-   }
-   else{
-        $path=CUSTOM_STORAGE_PATH;
-   }
-
-
+    error_log("gallery id========================================================".$gallery_id);
+    
     $select_gallery_id = $img_upload->select()
     ->where('gallery_id',$gallery_id)
     ->get();
@@ -81,7 +61,7 @@
 
     //Indivisual user during login
    
-   
+ 
     $images=$img_upload->select()
         ->where('gallery_id',$gallery_id)
         ->limit($results_per_page)
@@ -104,7 +84,15 @@
     // ->where('galleries.type',$gallery_type)
     // ->where('galleries.flag',1)
     // ->get();
-
+    if($select_gallery_type[0]['gallery_type']!=1 && $select_gallery_type[0]['gallery_type']!=2)
+    {
+        $path=CUSTOM_STORAGE_PATH;
+       
+        error_log($path);
+    }else{
+        $path=PROFILE_STORAGE_PATH;
+        error_log($path);
+    }
 
    
     ?>
@@ -147,23 +135,23 @@
       
       ?> <? if($page>=2){
         ?>  
-            <a onclick="paginate_pic(<?=$page-1?>)">Prev</a>   
+            <a onclick="paginate_pic(<?=$page-1?>,<?=$gallery_id?>)">Prev</a>   
        <?}?>     
                    
         <?for ($i=1; $i<=$total_pages; $i++) {   
           if ($i == $page) {  
             ?>
-              <a class = 'active' onclick="paginate_pic(<?$i?>)"><?= $i ?> </a>   
+              <a class = 'active' onclick="paginate_pic(<?=$i?>,<?=$gallery_id?>)"><?= $i ?> </a>   
          <? }               
          else  {
             ?>
-              <a onclick="paginate_pic(<?=$i?>)"><?=$i?> </a>     
+              <a onclick="paginate_pic(<?=$i?>,<?=$gallery_id?>)"><?=$i?> </a>     
           <?}  
         };    
   
         if($page<$total_pages){  
             error_log('4th'.$page)?>
-            <a onclick="paginate_pic(<?=$page+1?>)">Next </a>   
+            <a onclick="paginate_pic(<?=$page+1?>,<?=$gallery_id?>)">Next </a>   
         <? } ?>    
       </div>
       <div class="inline">   
@@ -196,15 +184,15 @@ $page=$page>$number_of_page?$number_of_page:(($page<1)?1:$page);
     // } 
     
 ?>
-        <script src="assest/jquery/jquery.min.js"></script>
+        <script src="assets/jquery/jquery.min.js"></script>
         <!-- Bootstrap 4 -->
-        <script src="assest/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- AdminLTE App -->
-        <script src="assest/dist/js/adminlte.min.js"></script>
-        <script src="assest/js/login_validation.js"></script>
-        <script src="assest/dist/js/demo.js"></script>
-        <script src="assest/js/register.js"></script>
-        <script src="assest/js/image_access.js"></script>
+        <script src="assets/dist/js/adminlte.min.js"></script>
+        <script src="assets/js/login_validation.js"></script>
+        <script src="assets/dist/js/demo.js"></script>
+        <script src="assets/js/register.js"></script>
+        <script src="assets/js/image_access.js"></script>
 </body>
 </html>  
 

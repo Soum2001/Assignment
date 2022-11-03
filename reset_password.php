@@ -6,7 +6,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
- <link rel="stylesheet" href="assest/css/additional.css">
+ <link rel="stylesheet" href="assets/css/additional.css">
  <div class="form-gap"></div>
     <title>Document</title>
     

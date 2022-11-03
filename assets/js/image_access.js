@@ -87,11 +87,13 @@ function delete_image()
     });
 
 }
-function paginate_pic(page){
+function paginate_pic(page,gallery_id){
+//    alert(page);
+//     alert(gallery_id);
     $.ajax({
         url: "view_profile.php",
         type:'POST', 
-        data:{'page':page,'gallery_type':1},
+        data:{'page':page,'gallery_id':gallery_id},
         success:function(response){
             //console.log(response);
             jQuery('#image_body').html(response); 
@@ -101,8 +103,9 @@ function paginate_pic(page){
 }
 
 function add_gallery(id){
+    alert(id);
     document.getElementById("new_galley_id").setAttribute('value',id);
-   
+
     $("#add_gallery").modal("show");
 }
 function new_gallery()

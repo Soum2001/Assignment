@@ -1,42 +1,42 @@
-function loadbanner_img(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            $('#crop__banner')
-                .attr('src', e.target.result);
-            $('#img_body')
-                .attr('src', e.target.result);
-        };
+// function loadbanner_img(input) {
+//     if (input.files && input.files[0]) {
+//         var reader = new FileReader();
+//         reader.onload = function (e) {
+//             $('#crop__banner')
+//                 .attr('src', e.target.result);
+//             $('#img_body')
+//                 .attr('src', e.target.result);
+//         };
         
-        $("#crop_banner_image").modal("show");
-            // TODO(DN): This is not a solution, will look for better approach
-            setTimeout(function(){
-            var image=$("#crop__banner");
-            var cropper = image.cropper({
-                aspectRatio: 1,
-                viewMode:3,
-                preview:'.preview_banner',
-                crop: function(e) {
-                  console.log(e.detail.x);
-                  console.log(e.detail.y);
-                  console.log(e.detail.width);
-                  console.log(e.detail.height);
-                  console.log(e.detail.rotate);
-                  console.log(e.detail.scaleX);
-                  console.log(e.detail.scaleY);
-                }
-                });
-                console.log(cropper);
-                var cropper = image.data('cropper');
-                console.log('abcdd');
-        },500);
-        reader.readAsDataURL(input.files[0]);
-        $(".card-body").css("background-image", "url(" + $("#preview_banner").attr("src")+ ")");
-        $('#crop_banner_image').on('hidden.bs.modal', function () {
-            location.reload();
-           })
-    } 
-}
+//         $("#crop_banner_image").modal("show");
+//             // TODO(DN): This is not a solution, will look for better approach
+//             setTimeout(function(){
+//             var image=$("#crop__banner");
+//             var cropper = image.cropper({
+//                 aspectRatio: 1,
+//                 viewMode:3,
+//                 preview:'.preview_banner',
+//                 crop: function(e) {
+//                   console.log(e.detail.x);
+//                   console.log(e.detail.y);
+//                   console.log(e.detail.width);
+//                   console.log(e.detail.height);
+//                   console.log(e.detail.rotate);
+//                   console.log(e.detail.scaleX);
+//                   console.log(e.detail.scaleY);
+//                 }
+//                 });
+//                 console.log(cropper);
+//                 var cropper = image.data('cropper');
+//                 console.log('abcdd');
+//         },500);
+//         reader.readAsDataURL(input.files[0]);
+//         $(".card-body").css("background-image", "url(" + $("#preview_banner").attr("src")+ ")");
+//         $('#crop_banner_image').on('hidden.bs.modal', function () {
+//             location.reload();
+//            })
+//     } 
+// }
 
 var crop_class = {
     cropper : {},
@@ -84,7 +84,6 @@ var crop_class = {
             
             */
             
-
             //var cropper = image.data('cropper');
             console.log('abcdd');
             
@@ -208,38 +207,36 @@ var crop_class = {
 
 
 
-function loadprofile_img(input) {
-    
-}
 
-$(document).ready(function(){
+
+// $(document).ready(function(){
       
-    $('#crop_banner_btn').click(function () {
-        // cavas=copper.getCropperCanvas({
-        //     width:300,
-        //     height:300
-        // })
+//     $('#crop_banner_btn').click(function () {
+//         // cavas=copper.getCropperCanvas({
+//         //     width:300,
+//         //     height:300
+//         // })
     
-        //$("#profile_image").attr("src", $("#preview").attr("src"));
-            var property=$('#bannerimgupload').prop('files')[0];
-            console.log('property'+property.name);
-            var form_data=new FormData();
-            form_data.append('bannerimgupload',property);
-            $.ajax({
-                url:'banner_upload.php',
-                type:'POST',
-                enctype: 'multipart/form-data',
-                data:form_data,
-                processData: false,
-                contentType: false
-            });
-          $("#crop__banner_img").modal("hide");
-          //$("#crop__banner_img").removeData("bs.modal");
-          window.location.reload();
-        });
+//         //$("#profile_image").attr("src", $("#preview").attr("src"));
+//             var property=$('#bannerimgupload').prop('files')[0];
+//             console.log('property'+property.name);
+//             var form_data=new FormData();
+//             form_data.append('bannerimgupload',property);
+//             $.ajax({
+//                 url:'banner_upload.php',
+//                 type:'POST',
+//                 enctype: 'multipart/form-data',
+//                 data:form_data,
+//                 processData: false,
+//                 contentType: false
+//             });
+//           $("#crop__banner_img").modal("hide");
+//           //$("#crop__banner_img").removeData("bs.modal");
+//           window.location.reload();
+//         });
     
     
-})
+// })
 function load_custom(input,id)
 {
     if (input.files && input.files[0]) {

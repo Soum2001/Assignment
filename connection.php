@@ -1,13 +1,14 @@
 <?
+include 'config.php';
 require 'vendor/autoload.php';
 define('PROFILE_STORAGE_PATH','/var/www/html/profile_images/');
 define('BANNER_STORAGE_PATH','/var/www/html/banner_images/');
 define('CUSTOM_STORAGE_PATH','/var/www/html/custom_images/');
 
 
-$connection = new PDO('mysql:host=localhost;dbname=user;charset=utf8', 'root', 'mindfire');
+$connection = new PDO('mysql:host='.host.';dbname='.dbname.';charset=utf8',username,password);
 
-// create a new mysql query builder
+// create a new mysql query builder'
 $query_builder = new \ClanCats\Hydrahon\Builder('mysql', function($query, $queryString, $queryParameters) use($connection)
 {
     $statement = $connection->prepare($queryString);

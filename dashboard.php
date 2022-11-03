@@ -1,23 +1,23 @@
 <?
 session_start();
-if($_SESSION['login_id']=="")
+
 
 include 'connection.php';
-include 'modal.php';
+
 $table = $query_builder->table('user_details');
 $img_upload = $query_builder->table('img_upload');
 
 $user_details=$table->select()->where('role','user')->get();
 
-$check= $user_detailstbl->select()
-->where('id',$_SESSION['login_id'])
-->get();
+// $check= $user_detailstbl->select()
+// ->where('id',$_SESSION['login_id'])
+// ->get();
 
-if(!$check)
-{
-  header('Location:index.php?err_response=0');
-  exit();
-}
+// if(!$check)
+// {
+//   header('Location:index.php?err_response=0');
+//   exit();
+// }
 
 $image = $img_upload->select()
    ->where('gallery_id',$select_gallery_id[0]['id'])
@@ -35,7 +35,7 @@ $image = $img_upload->select()
     }
     
     else{
-        $src="./assest/image/default-avatar.png";  
+        $src="./assets/image/default-avatar.png";  
     } 
 // $_SESSION['user']=array();
 // for($i=0;$i<count($user_details);$i++)
@@ -45,17 +45,7 @@ $image = $img_upload->select()
 // ?>
 <html>
     <head>
-         <!-- CSS only -->
-         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-         <link rel="stylesheet" href="assest/css/fontawesome-free/css/all.min.css">
-         <link rel="stylesheet" href="assest/css/adminlte.min.css">
-         <link rel="stylesheet" href="assest/css/icheck-bootstrap.min.css">
-         <link rel="stylesheet" href="assest/css/additional.css">
-         <link rel="stylesheet" href="assest/css/datatable.css"> 
-        <style>
-
-        </style> 
-
+      <?include 'header.php'?>
     </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -120,7 +110,7 @@ $image = $img_upload->select()
               </li>
              
               <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
+                <a href="user_profile.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Profile</p>
                 </a>
@@ -181,8 +171,8 @@ $image = $img_upload->select()
                                                 <td><?echo $data['phone_no']?></td>
                                                 <td><?echo $data['address']?></td>
                                                 <td>
-                                                    <button onclick="delete_data(<?= $data['id']?>)">Delete</button>
-                                                    <button onclick="row_select(<?= $data['id']?>)">Edit</button>
+                                                    <button class="btn btn-danger"onclick="delete_data(<?= $data['id']?>)">Delete</button>
+                                                    <button class="btn btn-primary" onclick="row_select(<?= $data['id']?>)">Edit</button>
                                                 </td>
                                             </tr>  
                                             <?
@@ -199,16 +189,7 @@ $image = $img_upload->select()
             </section>
         </div>   
     </div>
-        <!-- jQuery -->
-        <script src="assest/jquery/jquery.min.js"></script>
-        <!-- Bootstrap 4 -->
-        <script src="assest/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="assest/dist/js/adminlte.min.js"></script>
-        <script src="assest/js/login_validation.js"></script>
-        <script src="assest/js/register.js"></script>
-        <script src="assest/js/image_access.js"></script>
-        <script src="assest/js/datatable.js"></script>   
     <?include 'modal.php'?>
+    <?include 'footer.php'?>   
     </body>
 </html>

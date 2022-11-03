@@ -57,7 +57,7 @@
         $src = 'data: '.mime_content_type($query1[0]['img_path']).';base64,'.$imageData;
         }
         else{
-            $src="./assest/image/default-avatar.png";
+            $src="./assets/image/default-avatar.png";
         }   
     } 
     else if(($_GET['response'])=='Image uploaded successfully.')
@@ -73,7 +73,7 @@
         // Format the image SRC:  data:{mime};base64,{data};
         $src = 'data: '.mime_content_type($query1['img_path']).';base64,'.$imageData;
     }else{
-        $src="./assest/image/default-avatar.png";  
+        $src="./assets/image/default-avatar.png";  
     } 
     ?>
 <!DOCTYPE html>
@@ -81,10 +81,10 @@
     <head>
          <!-- CSS only -->
          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-        <link rel="stylesheet" href="assest/css/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="assest/css/adminlte.min.css">
-        <link rel="stylesheet" href="assest/css/icheck-bootstrap.min.css">
-        <link rel="stylesheet" href="assest/css/additional.css">
+        <link rel="stylesheet" href="assets/css/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/adminlte.min.css">
+        <link rel="stylesheet" href="assets/css/icheck-bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/additional.css">
 
     </head>
     <body>
@@ -369,15 +369,15 @@
     </div>
     
         <!-- jQuery -->
-        <script src="assest/jquery/jquery.min.js"></script>
+        <script src="assets/jquery/jquery.min.js"></script>
         <!-- Bootstrap 4 -->
-        <script src="assest/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- AdminLTE App -->
-        <script src="assest/dist/js/adminlte.min.js"></script>
-        <script src="assest/js/login_validation.js"></script>
-        <script src="assest/dist/js/demo.js"></script>
-        <script src="assest/js/register.js"></script>
-        <script src="assest/js/image_access.js"></script>
+        <script src="assets/dist/js/adminlte.min.js"></script>
+        <script src="assets/js/login_validation.js"></script>
+        <script src="assets/dist/js/demo.js"></script>
+        <script src="assets/js/register.js"></script>
+        <script src="assets/js/image_access.js"></script>
             
     </body>
 </html>

@@ -2,12 +2,7 @@
 <html lang="en">
     <head>
         <!-- CSS only -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-        <link rel="stylesheet" href="assest/css/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="assest/css/adminlte.min.css">
-        <!--<link rel="stylesheet" href="assest/css/icheck-bootstrap.min.css">-->
-        <link rel="stylesheet" href="assest/css/additional.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> 
+        <?include 'header.php'?>
     </head>
     <body class="register-page">
       <?
@@ -87,15 +82,6 @@
                 </div>
             </form>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-        <!-- jQuery -->
-        <script src="assest/jquery/jquery.min.js"></script>
-        <!-- Bootstrap 4 -->
-        <script src="assest/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="assest/dist/js/adminlte.min.js"></script>
-        <script src="assest/js/register.js"></script>
-        <script src="assest/js/image_access.js"></script>
+      <?include 'footer.php'?>
     </body>
 </html>
